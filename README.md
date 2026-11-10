@@ -5,6 +5,7 @@
 2026 현대자동차그룹 차량용 앱 개발 공모전 출품작입니다.
 
 - **APK**: [`apk/Cabin4D_0.3.0-debug.apk`](apk/Cabin4D_0.3.0-debug.apk) (Pleos Connect Emulator v2.1.0에서 실행 확인)
+- **시연 영상**: [`demo/Cabin4D_demo.mp4`](demo/Cabin4D_demo.mp4) (1분 10초. 앱 화면은 에뮬레이터 실행 화면, 효과 장면은 앱이 차량에 보내는 명령을 그림으로 옮긴 것)
 - **설치**: `adb install apk/Cabin4D_0.3.0-debug.apk` → 앱 목록에서 `Cabin 4D` 실행
 - **테스트 환경**: Pleos Connect Emulator v2.1.0(AAOS API 34), Vehicle SDK 2.3.2, 인터넷 연결 필요(영상 스트리밍)
 
