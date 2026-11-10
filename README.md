@@ -54,7 +54,7 @@
 | `vehicle/` | `PleosActuator`(Vehicle SDK 제어), `LoggingActuator`(로그만), `PleosReflect`(SDK 호출 도우미) |
 | `safety/` | `DrivingGate`: 플랫폼 주행 규제 상태 수신 |
 | `clock/` | 재생 시계: ExoPlayer, 영상 없는 시뮬레이션 |
-| `ui/` | Compose 화면(왼쪽 영상, 오른쪽 효과 패널·로그) |
+| `ui/` | Compose 화면(홈, 재생, YouTube 재생, 효과 테스트) |
 | `assets/tracks/` | 영화별 트랙(`sintel.json` 등)과 효과 테스트 `demo_60s.json`. 폴더의 JSON을 모두 목록에 보여 줌 |
 | `tools/track-maker/` | 트랙 생성 도구(영상 분석 → 무드등·섬광 자동 생성 + 장면 정의로 바람). 아래 "트랙 만들기" 참고 |
 
