@@ -4,9 +4,9 @@
 **무드등·실내등·독서등** 을 제어해 몰입감을 높이는 차량용 앱입니다.
 2026 현대자동차그룹 차량용 앱 개발 공모전 출품작입니다.
 
-- **APK**: [`apk/Cabin4D_0.3.0-debug.apk`](apk/Cabin4D_0.3.0-debug.apk) (Pleos Connect Emulator v2.1.0에서 실행 확인)
-- **시연 영상**: [`demo/Cabin4D_demo.mp4`](demo/Cabin4D_demo.mp4) (1분 10초. 앱 화면은 에뮬레이터 실행 화면, 효과 장면은 앱이 차량에 보내는 명령을 그림으로 옮긴 것)
-- **설치**: `adb install apk/Cabin4D_0.3.0-debug.apk` → 앱 목록에서 `Cabin 4D` 실행
+- **APK**: [`apk/박형원_Cabin4D_release.apk`](apk/박형원_Cabin4D_release.apk) (release 빌드, 버전 0.3.0)
+- **시연 영상**: [YouTube](https://youtu.be/3-Igin8Vdao) · [`demo/Cabin4D_demo.mp4`](demo/Cabin4D_demo.mp4) (1분 10초. 앱 화면은 에뮬레이터 실행 화면, 효과 장면은 앱이 차량에 보내는 명령을 그림으로 옮긴 것)
+- **실행 방법**: Pleos Connect Emulator를 켠 뒤 `adb install apk/박형원_Cabin4D_release.apk` → 앱 목록에서 `Cabin 4D` 실행. 소스에서 빌드하려면 아래 "시작하기" 참고
 - **테스트 환경**: Pleos Connect Emulator v2.1.0(AAOS API 34), Vehicle SDK 2.3.2, 인터넷 연결 필요(영상 스트리밍)
 
 ## 상영 목록 (CC 라이선스 공개 영화)
@@ -192,7 +192,7 @@ adb logcat -s Cabin4D
   - 다음 확인: Virtual Console에서 HVAC Power를 직접 켠 뒤 풍량 명령이 통하는지, 제어 명령이 Virtual Console 값에 나타나는지. Virtual Console의 Ambient Color는 Cyan·Blue·Purple·White만 고를 수 있어 임의 색이 안 될 수도 있다. 안 되면 공모전 문의처에 에뮬레이터의 제어 지원 범위를 물어볼 것.
 - [ ] 선행 보상·간격 값을 에뮬레이터(가능하면 실차)에서 측정해 조정
 - [ ] 외부 영상 앱 연동은 확장 계획: `PlaybackClock`을 하나 더 구현해 미디어 세션의 제목·재생 위치로 동기화(접근 권한·플랫폼 허용 여부 확인 필요)
-- [ ] 제출한 APK는 디버그 빌드(디버그 키 서명). 앱 마켓 출시 땐 정식 키스토어로 서명한 release 빌드로 교체
+- [ ] 제출한 release APK는 바로 설치할 수 있도록 디버그 키로 서명함. 앱 마켓 출시 땐 정식 키스토어로 교체
 
 ## 라이선스·출처
 
