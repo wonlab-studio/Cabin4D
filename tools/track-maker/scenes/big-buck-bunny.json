@@ -1,0 +1,32 @@
+{
+  "id": "big-buck-bunny",
+  "order": 3,
+  "title": "Big Buck Bunny",
+  "year": 2008,
+  "description": "숲속 말썽꾸러기들에게 참다못한 커다란 토끼의 유쾌한 복수극. 아이와 함께 보기 좋은 4D 애니메이션.",
+  "media": "https://archive.org/download/big_buck_bunny_1080p_stereo/big_buck_bunny_1080p_stereo.mp4",
+  "duration": 596.4,
+  "attribution": "(c) copyright 2008, Blender Foundation | www.bigbuckbunny.org",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "autoFlash": false,
+  "flashes": [],
+  "credits": [[492, 584]],
+  "scenes": [
+    { "from": 4, "to": 24, "label": "아침 초원", "wind": 0.15, "dir": "FLOOR" },
+    { "from": 62, "to": 100, "label": "나비와 산들바람", "wind": 0.12 },
+    { "from": 168, "to": 200, "label": "과일 공격", "wind": 0.15, "gusts": 0.35, "gustNote": "과일이 휙!" },
+    { "from": 230, "to": 290, "label": "반격 준비", "wind": 0.1 },
+    { "from": 408, "to": 412, "label": "첫 활공", "wind": 0.5, "dir": "FACE" },
+    { "from": 424, "to": 445, "label": "날다람쥐 활공", "wind": 0.7, "dir": "FACE", "gusts": 0.2, "gustNote": "활공 바람" },
+    { "from": 464, "to": 490, "label": "평화로운 초원", "wind": 0.15, "dir": "FLOOR" },
+    { "from": 584, "to": 596, "label": "쿠키 영상: 연날리기", "wind": 0.6, "dir": "FACE" }
+  ],
+  "highlights": [
+    [4, "아침 초원"],
+    [168, "과일 공격"],
+    [408, "첫 활공"],
+    [424, "날다람쥐 활공"],
+    [584, "쿠키 영상: 연날리기"]
+  ]
+}

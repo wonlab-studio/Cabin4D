@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cabin 4D 트랙 만들기</title>
+<style>
+  :root { color-scheme: dark; --bg: #0b0d10; --card: #16191e; --line: #2a2f37; --text: #f2f4f7; --sub: #b0b6bf; --accent: #8ab4ff; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 system-ui, sans-serif; }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 60px; }
+  h1 { font-size: 24px; margin: 0 0 4px; } p { color: var(--sub); margin: 4px 0 16px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  h2 { font-size: 16px; margin: 0 0 10px; }
+  textarea { width: 100%; box-sizing: border-box; min-height: 220px; background: #0f1216; color: var(--text); border: 1px solid var(--line); border-radius: 8px; font: 12px/1.5 ui-monospace, monospace; padding: 10px; }
+  button { background: var(--accent); color: #0b0d10; border: 0; border-radius: 8px; padding: 9px 16px; font-weight: 600; cursor: pointer; }
+  button:disabled { opacity: .4; cursor: default; }
+  progress { width: 100%; } .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  #sheet { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 3px; margin-top: 10px; }
+  #sheet figure { margin: 0; position: relative; } #sheet img { width: 100%; display: block; }
+  #sheet figcaption { position: absolute; left: 3px; top: 2px; background: #000a; color: #ffd84d; font: 12px ui-monospace, monospace; padding: 0 4px; }
+  #strip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; margin-top: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cabin 4D 트랙 만들기</h1>
+  <p>영상 파일을 분석해 무드등 색·밝기와 섬광을 자동으로 만들고, 장면 정의(scenes/*.json)에 적은 구간에 바람·송풍 방향을 넣어 앱용 트랙 JSON을 만듭니다. 파일은 이 브라우저 안에서만 처리됩니다.</p>
+
+  <section>
+    <h2>1. 영상 분석</h2>
+    <div class="row">
+      <input type="file" id="file" accept="video/*">
+      <label>간격 <select id="step"><option value="0.5" selected>0.5초</option><option value="1">1초</option></select></label>
+      <button id="run" disabled>분석 시작</button>
+    </div>
+    <progress id="prog" value="0" max="1"></progress>
+    <div id="info"></div>
+    <div id="sheet"></div>
+  </section>
+
+  <section>
+    <h2>2. 장면 정의</h2>
+    <p>scenes/ 폴더의 예시처럼 바람을 넣을 장면(from·to초, wind 0~1, dir, gusts, keys)과 크레딧 구간, 섬광 시각, 명장면을 적습니다.</p>
+    <textarea id="spec">{
+  "id": "my-movie",
+  "order": 5,
+  "title": "영화 제목",
+  "description": "",
+  "media": "https://example.com/movie.mp4",
+  "attribution": "",
+  "license": "",
+  "licenseUrl": "",
+  "autoFlash": false,
+  "flashes": [],
+  "credits": [],
+  "scenes": [
+    { "from": 10, "to": 30, "label": "바람 장면", "wind": 0.5, "dir": "FACE", "gusts": 0.3 }
+  ],
+  "highlights": [[10, "바람 장면"]]
+}</textarea>
+  </section>
+
+  <section>
+    <h2>3. 트랙 만들기</h2>
+    <div class="row"><button id="gen" disabled>트랙 생성</button><button id="save" disabled>JSON 저장</button><span id="stat"></span></div>
+    <div id="strip"></div>
+    <textarea id="out" readonly></textarea>
+  </section>
+</main>
+<script src="analyzer.js"></script>
+<script src="generator.js"></script>
+<script>
+  const $ = (id) => document.getElementById(id);
+  let result = null, json = '';
+  $('file').onchange = () => { $('run').disabled = !$('file').files.length; };
+  $('run').onclick = async () => {
+    $('run').disabled = true; $('sheet').innerHTML = '';
+    const url = URL.createObjectURL($('file').files[0]);
+    try {
+      result = await Cabin4DAnalyzer.analyzeVideo(url, {
+        step: +$('step').value, thumbEvery: 4,
+        onProgress: (t, end) => { $('prog').value = t / end; $('info').textContent = `${t.toFixed(1)} / ${end.toFixed(1)}초`; }
+      });
+      $('info').textContent = `완료: ${result.width}×${result.height}, ${result.duration.toFixed(1)}초, 샘플 ${result.samples.length}개`;
+      for (const [t, src] of result.thumbs) {
+        const f = document.createElement('figure');
+        f.innerHTML = `<img src="${src}"><figcaption>${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}</figcaption>`;
+        $('sheet').append(f);
+      }
+      $('gen').disabled = false;
+    } catch (e) { $('info').textContent = e.message; }
+    $('run').disabled = false;
+  };
+  $('gen').onclick = () => {
+    const spec = JSON.parse($('spec').value);
+    spec.duration = spec.duration || result.duration;
+    json = Cabin4DTrack.generateTrack(result.samples, spec);
+    $('out').value = json;
+    const track = JSON.parse(json);
+    $('stat').textContent = `큐 ${track.cues.length}개 (조명 ${track.cues.filter(c => c.ambient).length}, 바람 ${track.cues.filter(c => c.wind != null).length})`;
+    // 무드등 타임라인 미리보기
+    const sec = (s) => { const p = s.split(':'); return +p[0] * 60 + +p[1]; };
+    const amb = track.cues.filter(c => c.ambient).map(c => [sec(c.at), c.ambient, c.brightness]);
+    $('strip').innerHTML = amb.map(([t, col, br], i) => {
+      const end = i + 1 < amb.length ? amb[i + 1][0] : spec.duration;
+      return `<div style="flex:${Math.max(0.1, end - t)};background:${col};opacity:${0.25 + br * 0.75}"></div>`;
+    }).join('');
+    $('save').disabled = false;
+  };
+  $('save').onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([json], { type: 'application/json' }));
+    a.download = (JSON.parse($('spec').value).id || 'track') + '.json';
+    a.click();
+  };
+</script>
+</body>
+</html>

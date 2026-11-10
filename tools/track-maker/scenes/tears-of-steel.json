@@ -1,0 +1,159 @@
+{
+  "id": "tears-of-steel",
+  "order": 2,
+  "title": "Tears of Steel",
+  "year": 2012,
+  "description": "로봇에게 점령된 미래의 암스테르담. 과거의 기억을 되돌리려는 과학자들과 거대 로봇의 최후의 전투.",
+  "media": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+  "duration": 734.2,
+  "attribution": "(CC) Blender Foundation | mango.blender.org",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "autoFlash": false,
+  "flashes": [
+    216,
+    472
+  ],
+  "credits": [
+    [
+      588,
+      711
+    ]
+  ],
+  "scenes": [
+    {
+      "from": 12,
+      "to": 25,
+      "label": "빛의 기억",
+      "wind": 0.2
+    },
+    {
+      "from": 28,
+      "to": 42,
+      "label": "다리 위의 이별",
+      "wind": 0.2,
+      "dir": "FLOOR"
+    },
+    {
+      "from": 72,
+      "to": 88,
+      "label": "폐허가 된 도시",
+      "wind": 0.2
+    },
+    {
+      "from": 88,
+      "to": 113,
+      "label": "하늘을 나는 거대 기계",
+      "wind": 0.4,
+      "dir": "FACE",
+      "gusts": 0.25
+    },
+    {
+      "from": 113,
+      "to": 158,
+      "label": "폐허 속 저격수",
+      "wind": 0.15
+    },
+    {
+      "from": 160,
+      "to": 175,
+      "label": "무너진 거리",
+      "wind": 0.25
+    },
+    {
+      "from": 214,
+      "to": 224,
+      "label": "홀로그램 섬광",
+      "wind": 0.2,
+      "keys": [
+        [
+          216,
+          0.7,
+          "홀로그램 폭발"
+        ],
+        [
+          219,
+          0.3
+        ]
+      ],
+      "flashColor": "#E8F4FF",
+      "flashNote": "홀로그램 섬광"
+    },
+    {
+      "from": 283,
+      "to": 305,
+      "label": "로봇의 습격",
+      "wind": 0.55,
+      "dir": "FACE",
+      "gusts": 0.35
+    },
+    {
+      "from": 384,
+      "to": 400,
+      "label": "로봇과의 격투",
+      "wind": 0.4,
+      "gusts": 0.3
+    },
+    {
+      "from": 430,
+      "to": 506,
+      "label": "최후의 전투",
+      "wind": 0.5,
+      "dir": "FACE",
+      "gusts": 0.35,
+      "gustNote": "폭풍",
+      "flashColor": "#FF8A2A",
+      "flashNote": "폭발"
+    },
+    {
+      "from": 572,
+      "to": 588,
+      "label": "전투가 끝난 뒤",
+      "wind": 0.15
+    },
+    {
+      "from": 711,
+      "to": 731,
+      "label": "쿠키 영상",
+      "wind": 0.15
+    }
+  ],
+  "highlights": [
+    [
+      12,
+      "빛의 기억"
+    ],
+    [
+      88,
+      "하늘을 나는 거대 기계"
+    ],
+    [
+      214,
+      "홀로그램 섬광"
+    ],
+    [
+      283,
+      "로봇의 습격"
+    ],
+    [
+      430,
+      "최후의 전투"
+    ],
+    [
+      470,
+      "대폭발"
+    ]
+  ],
+  "subtitles": [
+    {
+      "lang": "ko",
+      "label": "한국어",
+      "uri": "asset:///subs/tears-of-steel.ko.srt"
+    },
+    {
+      "lang": "en",
+      "label": "English",
+      "uri": "asset:///subs/tears-of-steel.en.srt"
+    }
+  ]
+}

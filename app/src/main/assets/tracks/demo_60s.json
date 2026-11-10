@@ -1,0 +1,39 @@
+{
+  "id": "demo-60s",
+  "order": 9,
+  "title": "4D 효과 테스트 (60초)",
+  "description": "영상 없이 60초 동안 바람·송풍 방향·무드등 효과를 차례로 내 봅니다. 차량 반응(Virtual Console)을 빠르게 확인할 때 쓰세요.",
+  "highlights": [ {"at": "00:12.0", "label": "폭발 돌풍"}, {"at": "00:22.0", "label": "눈보라"}, {"at": "00:48.0", "label": "질주 장면"} ],
+  "media": null,
+  "duration": "01:00.0",
+  "cues": [
+    {"at": "00:02.0", "cabin": "off", "hold": 51000, "note": "실내등 암전"},
+    {"at": "00:12.0", "reading": "on", "hold": 400, "note": "폭발 · 독서등 번쩍임"},
+    {"at": "00:40.0", "reading": "on", "hold": 400, "note": "경고 · 독서등 번쩍임"},
+    {"at": "00:42.0", "reading": "on", "hold": 400, "note": "경고 · 독서등 번쩍임"},
+    { "at": "00:02.0", "ambient": "#2B3A67", "brightness": 0.3, "note": "오프닝: 은은한 남색" },
+    { "at": "00:05.0", "wind": 0.2, "note": "산들바람" },
+    { "at": "00:09.0", "direction": "FACE", "note": "얼굴 쪽으로" },
+
+    { "at": "00:12.0", "wind": 0.9, "hold": 1500, "note": "폭발 돌풍" },
+    { "at": "00:12.0", "ambient": "#FF5A1F", "brightness": 1.0, "hold": 1200, "note": "폭발 섬광" },
+    { "at": "00:18.0", "wind": 0.2, "note": "여운" },
+
+    { "at": "00:22.0", "ambient": "#8FD3FF", "brightness": 0.6, "note": "설원 장면" },
+    { "at": "00:22.0", "direction": "FACE_FLOOR", "note": "눈보라 감싸기" },
+    { "at": "00:23.0", "wind": 0.6, "note": "눈보라" },
+
+    { "at": "00:32.0", "ambient": "#3BFF6A", "brightness": 0.5, "note": "숲" },
+    { "at": "00:32.0", "wind": 0.3, "note": "숲 바람" },
+
+    { "at": "00:40.0", "ambient": "#FF2E2E", "brightness": 0.8, "hold": 400, "note": "경고등 1" },
+    { "at": "00:41.0", "ambient": "#FF2E2E", "brightness": 0.8, "hold": 400, "note": "경고등 2" },
+    { "at": "00:42.0", "ambient": "#FF2E2E", "brightness": 0.8, "hold": 400, "note": "경고등 3" },
+
+    { "at": "00:48.0", "direction": "FACE", "note": "정면 맞바람" },
+    { "at": "00:48.0", "wind": 1.0, "hold": 2500, "note": "질주 장면" },
+
+    { "at": "00:55.0", "ambient": "#FFC36B", "brightness": 0.4, "note": "엔딩: 노을" },
+    { "at": "00:55.0", "wind": 0.1, "note": "잔잔하게" }
+  ]
+}

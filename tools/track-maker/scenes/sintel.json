@@ -1,0 +1,222 @@
+{
+  "id": "sintel",
+  "order": 1,
+  "title": "Sintel",
+  "year": 2010,
+  "description": "아기 용 '스케일스'를 찾아 설산과 사막을 건너는 소녀 신텔의 모험. 눈보라와 용의 날갯짓이 차 안으로 불어옵니다.",
+  "media": "https://archive.org/download/Sintel/sintel-2048-stereo.mp4",
+  "duration": 888.0,
+  "attribution": "© copyright Blender Foundation | durian.blender.org",
+  "license": "CC BY 3.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+  "autoFlash": false,
+  "flashes": [
+    560
+  ],
+  "credits": [
+    [
+      746,
+      889
+    ]
+  ],
+  "scenes": [
+    {
+      "from": 6,
+      "to": 31.5,
+      "label": "설산 오프닝",
+      "wind": 0.3,
+      "dir": "FACE_FLOOR"
+    },
+    {
+      "from": 31.5,
+      "to": 68,
+      "label": "눈보라 속 습격",
+      "wind": 0.55,
+      "dir": "FACE",
+      "gusts": 0.35,
+      "gustNote": "격투 돌풍"
+    },
+    {
+      "from": 68,
+      "to": 88,
+      "label": "눈 속에 쓰러지다",
+      "wind": 0.3
+    },
+    {
+      "from": 88,
+      "to": 101,
+      "label": "타이틀 · 화이트아웃",
+      "wind": 0.6,
+      "keys": [
+        [
+          96,
+          0.4
+        ]
+      ]
+    },
+    {
+      "from": 280,
+      "to": 300,
+      "label": "지붕 위 비행 연습",
+      "wind": 0.25,
+      "dir": "FACE"
+    },
+    {
+      "from": 312,
+      "to": 332,
+      "label": "어른 용의 습격",
+      "wind": 0.4,
+      "dir": "FACE",
+      "keys": [
+        [
+          315.5,
+          0.95,
+          "용의 날갯짓"
+        ],
+        [
+          319,
+          0.75
+        ],
+        [
+          324,
+          0.5
+        ],
+        [
+          329,
+          0.3
+        ]
+      ]
+    },
+    {
+      "from": 352,
+      "to": 366,
+      "label": "밤길 여정",
+      "wind": 0.15
+    },
+    {
+      "from": 366,
+      "to": 380,
+      "label": "사막의 열풍",
+      "wind": 0.35,
+      "dir": "FLOOR"
+    },
+    {
+      "from": 380,
+      "to": 386,
+      "label": "대나무 숲",
+      "wind": 0.2
+    },
+    {
+      "from": 394,
+      "to": 436,
+      "label": "다시 설산으로",
+      "wind": 0.55,
+      "dir": "FACE_FLOOR",
+      "keys": [
+        [
+          414,
+          0.75,
+          "화이트아웃 눈보라"
+        ],
+        [
+          426,
+          0.6
+        ]
+      ],
+      "gusts": 0.25
+    },
+    {
+      "from": 472,
+      "to": 492,
+      "label": "달빛 숲길",
+      "wind": 0.12
+    },
+    {
+      "from": 556,
+      "to": 590,
+      "label": "용의 불길과 결투",
+      "wind": 0.45,
+      "dir": "FACE",
+      "keys": [
+        [
+          559.5,
+          1.0,
+          "용의 불길"
+        ],
+        [
+          562,
+          0.6
+        ]
+      ],
+      "gusts": 0.3,
+      "flashColor": "#FF5A10",
+      "flashNote": "용의 불길"
+    },
+    {
+      "from": 626,
+      "to": 642,
+      "label": "스케일스의 최후",
+      "ambient": "#C80010",
+      "brightness": 0.3
+    },
+    {
+      "from": 648,
+      "to": 676,
+      "label": "무너지는 동굴",
+      "wind": 0.55,
+      "dir": "FACE_FLOOR",
+      "gusts": 0.3,
+      "gustNote": "낙석"
+    },
+    {
+      "from": 684,
+      "to": 712,
+      "label": "새벽 안개",
+      "wind": 0.12
+    },
+    {
+      "from": 714,
+      "to": 745,
+      "label": "작별",
+      "wind": 0.1
+    }
+  ],
+  "highlights": [
+    [
+      31.5,
+      "눈보라 속 습격"
+    ],
+    [
+      88,
+      "타이틀 · 화이트아웃"
+    ],
+    [
+      312,
+      "어른 용의 습격"
+    ],
+    [
+      394,
+      "다시 설산으로"
+    ],
+    [
+      556,
+      "용의 불길"
+    ],
+    [
+      648,
+      "무너지는 동굴"
+    ]
+  ],
+  "subtitles": [
+    {
+      "lang": "ko",
+      "label": "한국어",
+      "uri": "asset:///subs/sintel.ko.srt"
+    },
+    {
+      "lang": "en",
+      "label": "English",
+      "uri": "asset:///subs/sintel.en.srt"
+    }
+  ]
+}

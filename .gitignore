@@ -1,0 +1,14 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.keystore
+*.jks
+# 영상은 용량·저작권 때문에 기본 제외. 재배포가 허용된 CC 라이선스 영상이면 이 줄을 지워도 됨
+/app/src/main/assets/videos/*.mp4
